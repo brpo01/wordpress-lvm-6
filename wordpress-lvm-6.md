@@ -23,7 +23,7 @@ $ sudo gdisk /dev/xvdh
 ```
 - When the prompt is loaded and it asks for a command, type `n` to create the partition. The most important option we have to update is what type of partition we want this disk to be. By default it is configured to be a Linux filesystem disk, but we will have to configure it to a Linux LVM disk by using hex code `8E00`, this is gdisks' hex code for Linux LVM. To save your configuration type `w` and this will write your configuration onto those volumes.
 
-- To make the conversion of our partitions into logical volumes, the logical volume manager pacage has to be installed.
+- To make the conversion of our partitions into logical volumes, the logical volume manager package has to be installed.
 
 ```
 $ sudo yum install lvm2
@@ -100,7 +100,7 @@ $ sudo dev/webdata-vg/logs-ls /var/log
 - Restore the files/folders back into the /var/log directory
 
 ```
-$ sudo rsync /home/recovery/logs/log/. /var/log
+$ sudo rsync -av /home/recovery/logs/log/. /var/log
 ```
 - To make sure that the mount configuration just performed is persisted, we have to update the '/etc/fstab' file. But before the update is made, let us copy the block `ids` for our logical volumes using the `blkid` command
 
@@ -236,7 +236,7 @@ $ sudo chown apache:apache wordpress
 **This is how to deploy a full scale web solution using wordpress and configure the linux storage subsystem using LVM (Logical Volume Manager)**
 
 # **BLOCKERS**
-There was error connecting to database due to the fact that I failed to update the wp-config.php file with the database name, user and ip address in the /var/www/html directory. It was fixed when i noticed the error and corrected it. 
+There was error connecting to database when i tried opening the site on the browser due to the fact that I failed to update the wp-config.php file with the database name, user and host address in the /var/www/html/wordpress directory. It was fixed when i noticed the error and corrected it. 
 
 
 
