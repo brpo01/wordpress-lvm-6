@@ -94,7 +94,7 @@ $ sudo rsync -av /var/log/. /home/recovery/logs/
 - Mount /var/log on the `logs-lv` logical volume
 
 ```
-$ sudo dev/webdata-vg/logs-ls /var/log
+$ sudo mount /dev/webdata-vg/logs-lv /var/log
 ```
 
 - Restore the files/folders back into the /var/log directory
@@ -150,7 +150,7 @@ $ sudo yum module enable php:remi-7.4
 $ sudo yum install php php-opcache php-gd php-curl php-mysqlnd
 $ sudo systemctl start php-fpm
 $ sudo systemctl enable php-fpm
-setsebool -P httpd_execmem 1
+$ sudo setsebool -P httpd_execmem 1
 ```
 - Create A folder called `wordpress` in the home directory.
 
