@@ -2,7 +2,7 @@
 
 This projects entails deploying a wordpress CMS to the cloud using AWS EC2 instances, which will be partitioned, configured into logical volumes using the logical volume manager, and mounted on the Linux servers.
 
-## **Launch EC2 instances (Partitioning, Mounting and Configuring with LVM**
+## **Launch EC2 instances (Partitioning, Configuring with LVM & Mounting)**
 
 - Create two linux virtual servers and configure one to act as a `web-server` and the other as a `database-server`
 
@@ -123,7 +123,7 @@ $ sudo systemctl daemon-reload
 
 - Repeat all of the steps above for the `database-server`, the only difference is that there'll be only one logical volume `db-lv` and it will be mounted on the /db directory to store database related files. The size of the logical volume can be between 1-29GB, remember the size of our attached volumes are 10gb each. 
 
-*Note: This logical volume will be storing database related content, so it is advisable to use a large chunk of the logical volume size i.e >20GB. This can vary based on the requirements for the application.*
+*Note: This logical volume will be storing database related content, so it is advisable to use a large chunk of the logical volume size i.e >20GB. This should vary based on the requirements for the application.*
 
 ## **Install Wordpress on the EC2 Web Server**
 - Update you redhat repo and install these packages
